@@ -1,34 +1,36 @@
 object Form9: TForm9
-  Left = 381
-  Top = 158
-  Width = 870
+  Left = 261
+  Top = 120
+  Width = 635
   Height = 450
+  HorzScrollBar.Position = 135
   Caption = 'DATA WALI KELAS'
-  Color = clBtnFace
+  Color = clOlive
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
-    Left = 208
+    Left = 73
     Top = 80
     Width = 17
     Height = 13
     Caption = 'NIK'
   end
   object lbl2: TLabel
-    Left = 208
+    Left = 73
     Top = 104
     Width = 29
     Height = 13
     Caption = 'NAMA'
   end
   object lbl6: TLabel
-    Left = 344
+    Left = 209
     Top = 40
     Width = 141
     Height = 19
@@ -43,49 +45,49 @@ object Form9: TForm9
     ParentFont = False
   end
   object lbl3: TLabel
-    Left = 208
+    Left = 73
     Top = 128
     Width = 74
     Height = 13
     Caption = 'JENIS KELAMIN'
   end
   object lbl5: TLabel
-    Left = 208
+    Left = 73
     Top = 152
     Width = 61
     Height = 13
     Caption = 'PENDIDIKAN'
   end
   object lbl7: TLabel
-    Left = 208
+    Left = 73
     Top = 176
     Width = 38
     Height = 13
     Caption = 'TELPON'
   end
   object lbl8: TLabel
-    Left = 208
+    Left = 73
     Top = 200
     Width = 38
     Height = 13
     Caption = 'MATPEL'
   end
   object lbl9: TLabel
-    Left = 208
+    Left = 73
     Top = 224
     Width = 40
     Height = 13
     Caption = 'ALAMAT'
   end
   object lbl10: TLabel
-    Left = 208
+    Left = 73
     Top = 248
     Width = 38
     Height = 13
     Caption = 'STATUS'
   end
   object dbgrd1: TDBGrid
-    Left = 200
+    Left = 65
     Top = 338
     Width = 537
     Height = 73
@@ -96,9 +98,10 @@ object Form9: TForm9
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object edt1: TEdit
-    Left = 312
+    Left = 177
     Top = 80
     Width = 209
     Height = 21
@@ -106,7 +109,7 @@ object Form9: TForm9
     TabOrder = 1
   end
   object edt2: TEdit
-    Left = 312
+    Left = 177
     Top = 104
     Width = 209
     Height = 21
@@ -114,55 +117,60 @@ object Form9: TForm9
     TabOrder = 2
   end
   object btn1: TButton
-    Left = 208
-    Top = 320
+    Left = 73
+    Top = 288
     Width = 73
     Height = 33
     Caption = 'Baru'
     TabOrder = 3
+    OnClick = btn1Click
   end
   object btn2: TButton
-    Left = 296
-    Top = 320
+    Left = 161
+    Top = 288
     Width = 73
     Height = 33
     Caption = 'Simpan'
     TabOrder = 4
+    OnClick = btn2Click
   end
   object btn3: TButton
-    Left = 384
-    Top = 320
+    Left = 249
+    Top = 288
     Width = 73
     Height = 33
     Caption = 'Edit'
     TabOrder = 5
+    OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 472
-    Top = 320
+    Left = 337
+    Top = 288
     Width = 73
     Height = 33
     Caption = 'Hapus'
     TabOrder = 6
+    OnClick = btn4Click
   end
   object btn5: TButton
-    Left = 560
-    Top = 320
+    Left = 425
+    Top = 288
     Width = 73
     Height = 33
     Caption = 'Batal'
     TabOrder = 7
+    OnClick = btn5Click
   end
   object btn6: TButton
-    Left = 648
-    Top = 320
+    Left = 513
+    Top = 288
     Width = 65
     Height = 33
     Caption = 'Laporan'
     TabOrder = 8
   end
   object edt3: TEdit
-    Left = 312
+    Left = 177
     Top = 152
     Width = 209
     Height = 21
@@ -170,7 +178,7 @@ object Form9: TForm9
     TabOrder = 9
   end
   object edt4: TEdit
-    Left = 312
+    Left = 177
     Top = 176
     Width = 209
     Height = 21
@@ -178,7 +186,7 @@ object Form9: TForm9
     TabOrder = 10
   end
   object edt5: TEdit
-    Left = 312
+    Left = 177
     Top = 200
     Width = 209
     Height = 21
@@ -186,41 +194,42 @@ object Form9: TForm9
     TabOrder = 11
   end
   object cmb1: TComboBox
-    Left = 312
+    Left = 177
     Top = 128
     Width = 209
     Height = 21
     ItemHeight = 13
     TabOrder = 12
+    Items.Strings = (
+      'Laki-laki'
+      'Perempuan')
   end
   object edt6: TEdit
-    Left = 312
+    Left = 177
     Top = 224
     Width = 209
     Height = 21
     Enabled = False
     TabOrder = 13
   end
-  object cmb2: TComboBox
-    Left = 312
+  object edt7: TEdit
+    Left = 177
     Top = 248
     Width = 209
     Height = 21
-    ItemHeight = 13
     TabOrder = 14
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'Localhost'
     Port = 3306
-    Database = 'smktunabangsa'
+    Database = 'smkbinabangsa'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 
-      'C:\Users\ACER\Documents\SEMESTER 4\VISUAL\project_akhir\libmysql' +
-      '.dll'
+    LibraryLocation = 'D:\Project_Akhir\libmysql.dll'
     Left = 24
     Top = 16
   end
@@ -231,8 +240,9 @@ object Form9: TForm9
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from hubungan')
+      'select * from walikelas')
     Params = <>
     Left = 64
     Top = 16

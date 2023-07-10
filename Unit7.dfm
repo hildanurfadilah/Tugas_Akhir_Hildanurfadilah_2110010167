@@ -4,7 +4,7 @@ object Form7: TForm7
   Width = 847
   Height = 558
   Caption = 'DATA SISWA'
-  Color = clBtnFace
+  Color = clTeal
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -110,6 +110,7 @@ object Form7: TForm7
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
   end
   object edt1: TEdit
     Left = 312
@@ -134,6 +135,7 @@ object Form7: TForm7
     Height = 33
     Caption = 'Baru'
     TabOrder = 3
+    OnClick = btn1Click
   end
   object btn2: TButton
     Left = 296
@@ -142,6 +144,7 @@ object Form7: TForm7
     Height = 33
     Caption = 'Simpan'
     TabOrder = 4
+    OnClick = btn2Click
   end
   object btn3: TButton
     Left = 384
@@ -150,6 +153,7 @@ object Form7: TForm7
     Height = 33
     Caption = 'Edit'
     TabOrder = 5
+    OnClick = btn3Click
   end
   object btn4: TButton
     Left = 472
@@ -158,6 +162,7 @@ object Form7: TForm7
     Height = 33
     Caption = 'Hapus'
     TabOrder = 6
+    OnClick = btn4Click
   end
   object btn5: TButton
     Left = 560
@@ -166,6 +171,7 @@ object Form7: TForm7
     Height = 33
     Caption = 'Batal'
     TabOrder = 7
+    OnClick = btn5Click
   end
   object btn6: TButton
     Left = 648
@@ -243,14 +249,13 @@ object Form7: TForm7
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'Localhost'
     Port = 3306
-    Database = 'smktunabangsa'
+    Database = 'smkbinabangsa'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 
-      'C:\Users\ACER\Documents\SEMESTER 4\VISUAL\project_akhir\libmysql' +
-      '.dll'
+    LibraryLocation = 'D:\Project_Akhir\libmysql.dll'
     Left = 24
     Top = 16
   end
@@ -261,8 +266,9 @@ object Form7: TForm7
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
-      'select * from hubungan')
+      'select * from siswa')
     Params = <>
     Left = 64
     Top = 16
