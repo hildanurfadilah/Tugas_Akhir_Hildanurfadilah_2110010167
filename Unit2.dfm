@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 208
-  Top = 240
+  Left = 273
+  Top = 166
   Width = 870
   Height = 451
   Caption = 'DATA HUBUNGAN'
@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
@@ -18,14 +19,14 @@ object Form2: TForm2
     Top = 80
     Width = 47
     Height = 13
-    Caption = 'SISWA ID'
+    Caption = 'ID SISWA'
   end
   object lbl2: TLabel
     Left = 200
     Top = 104
     Width = 42
     Height = 13
-    Caption = 'ORTU ID'
+    Caption = 'ID ORTU'
   end
   object lbl3: TLabel
     Left = 200
@@ -63,26 +64,13 @@ object Form2: TForm2
     ParentColor = False
     ParentFont = False
   end
-  object dbgrd1: TDBGrid
-    Left = 200
-    Top = 272
-    Width = 537
-    Height = 73
-    DataSource = ds1
-    TabOrder = 0
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
-  end
   object edt1: TEdit
     Left = 304
     Top = 80
     Width = 209
     Height = 21
     Enabled = False
-    TabOrder = 1
+    TabOrder = 0
   end
   object edt2: TEdit
     Left = 304
@@ -90,25 +78,7 @@ object Form2: TForm2
     Width = 209
     Height = 21
     Enabled = False
-    TabOrder = 2
-  end
-  object btn1: TButton
-    Left = 208
-    Top = 216
-    Width = 73
-    Height = 33
-    Caption = 'Baru'
-    TabOrder = 3
-    OnClick = btn1Click
-  end
-  object btn2: TButton
-    Left = 296
-    Top = 216
-    Width = 73
-    Height = 33
-    Caption = 'Simpan'
-    TabOrder = 4
-    OnClick = btn2Click
+    TabOrder = 1
   end
   object cmb1: TComboBox
     Left = 304
@@ -116,7 +86,7 @@ object Form2: TForm2
     Width = 209
     Height = 21
     ItemHeight = 13
-    TabOrder = 5
+    TabOrder = 2
     Items.Strings = (
       'Kandung'
       'Tiri'
@@ -128,7 +98,7 @@ object Form2: TForm2
     Width = 209
     Height = 21
     ItemHeight = 13
-    TabOrder = 6
+    TabOrder = 3
     Items.Strings = (
       'Ayah'
       'Ibu'
@@ -142,39 +112,89 @@ object Form2: TForm2
     Width = 209
     Height = 21
     ItemHeight = 13
-    TabOrder = 7
+    TabOrder = 4
     Items.Strings = (
       'Hidup'
       'Meninggal')
   end
+  object dbgrd1: TDBGrid
+    Left = 192
+    Top = 280
+    Width = 537
+    Height = 73
+    DataSource = ds1
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnCellClick = dbgrd1CellClick
+  end
+  object btn1: TButton
+    Left = 200
+    Top = 224
+    Width = 73
+    Height = 33
+    Caption = 'Baru'
+    TabOrder = 6
+    OnClick = btn1Click
+  end
+  object btn2: TButton
+    Left = 288
+    Top = 224
+    Width = 73
+    Height = 33
+    Caption = 'Simpan'
+    TabOrder = 7
+    OnClick = btn2Click
+  end
   object btn3: TButton
-    Left = 384
-    Top = 216
-    Width = 81
+    Left = 376
+    Top = 224
+    Width = 73
     Height = 33
     Caption = 'Edit'
     TabOrder = 8
+    OnClick = btn3Click
   end
   object btn4: TButton
-    Left = 480
-    Top = 216
-    Width = 75
-    Height = 25
-    Caption = 'btn4'
+    Left = 464
+    Top = 224
+    Width = 73
+    Height = 33
+    Caption = 'Hapus'
     TabOrder = 9
+    OnClick = btn4Click
+  end
+  object btn5: TButton
+    Left = 552
+    Top = 224
+    Width = 73
+    Height = 33
+    Caption = 'Batal'
+    TabOrder = 10
+    OnClick = btn5Click
+  end
+  object btn6: TButton
+    Left = 640
+    Top = 224
+    Width = 65
+    Height = 33
+    Caption = 'Laporan'
+    TabOrder = 11
   end
   object con1: TZConnection
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
+    Connected = True
     HostName = 'Localhost'
     Port = 3306
-    Database = 'smktunabangsa'
+    Database = 'smkbinabangsa'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 
-      'C:\Users\ACER\Documents\SEMESTER 4\VISUAL\project_akhir\libmysql' +
-      '.dll'
+    LibraryLocation = 'D:\Project_Akhir\libmysql.dll'
     Left = 16
     Top = 16
   end
@@ -185,6 +205,7 @@ object Form2: TForm2
   end
   object zqry1: TZQuery
     Connection = con1
+    Active = True
     SQL.Strings = (
       'select * from hubungan')
     Params = <>
