@@ -1,6 +1,6 @@
 object Form7: TForm7
-  Left = 214
-  Top = 157
+  Left = 213
+  Top = 66
   Width = 847
   Height = 558
   Caption = 'DATA SISWA'
@@ -11,6 +11,7 @@ object Form7: TForm7
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object lbl1: TLabel
