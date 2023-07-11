@@ -37,6 +37,7 @@ type
     procedure editclear;
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -190,6 +191,11 @@ begin
 
   edt1.Enabled:=False;
   edt2.Enabled:=False;
+end;
+
+procedure TForm3.btn6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

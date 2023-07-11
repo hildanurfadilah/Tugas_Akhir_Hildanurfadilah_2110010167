@@ -51,6 +51,8 @@ type
     procedure editclear;
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
+    procedure btn6Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -129,36 +131,6 @@ begin
   zqry1.SQL.Add('select * semester');
   zqry1.Open;
   posisiawal;
-end;
-
-procedure TForm7.dbgrd1CellClick(Column: TColumn);
-begin
-  id:= zqry1.Fields[0].AsString;
-  edt1.Text:=zqry1.FieldList[1].AsString;
-  edt2.Text:=zqry1.FieldList[2].AsString;
-  edt3.Text:=zqry1.FieldList[3].AsString;
-  edt4.Text:=zqry1.FieldList[4].AsString;
-  edt5.Text:=zqry1.FieldList[5].AsString;
-  edt6.Text:=zqry1.FieldList[6].AsString;
-  cmb1.Text:=zqry1.FieldList[7].AsString;
-  cmb2.Text:=zqry1.FieldList[8].AsString;
-  cmb3.Text:=zqry1.FieldList[9].AsString;
-
-  edt1.Enabled:=True;
-  edt2.Enabled:=True;
-  edt3.Enabled:=True;
-  edt4.Enabled:=True;
-  edt5.Enabled:=True;
-  edt6.Enabled:=True;
-  cmb1.Enabled:=True;
-  cmb2.Enabled:=True;
-  cmb3.Enabled:=True;
-  btn1.Enabled:=False;
-  btn2.Enabled:=False;
-  btn3.Enabled:=True;
-  btn4.Enabled:=True;
-  btn5.Enabled:=True;
-
 end;
 
 procedure TForm6.btn4Click(Sender: TObject);
@@ -265,6 +237,41 @@ edt6.Enabled:=False;
 cmb1.Enabled:=False;
 cmb2.Enabled:=False;
 cmb3.Enabled:=False;
+end;
+
+procedure TForm6.dbgrd1CellClick(Column: TColumn);
+begin
+  id:= zqry1.Fields[0].AsString;
+  edt1.Text:=zqry1.FieldList[1].AsString;
+  edt2.Text:=zqry1.FieldList[2].AsString;
+  edt3.Text:=zqry1.FieldList[3].AsString;
+  edt4.Text:=zqry1.FieldList[4].AsString;
+  edt5.Text:=zqry1.FieldList[5].AsString;
+  edt6.Text:=zqry1.FieldList[6].AsString;
+  cmb1.Text:=zqry1.FieldList[7].AsString;
+  cmb2.Text:=zqry1.FieldList[8].AsString;
+  cmb3.Text:=zqry1.FieldList[9].AsString;
+
+  edt1.Enabled:=True;
+  edt2.Enabled:=True;
+  edt3.Enabled:=True;
+  edt4.Enabled:=True;
+  edt5.Enabled:=True;
+  edt6.Enabled:=True;
+  cmb1.Enabled:=True;
+  cmb2.Enabled:=True;
+  cmb3.Enabled:=True;
+  btn1.Enabled:=False;
+  btn2.Enabled:=False;
+  btn3.Enabled:=True;
+  btn4.Enabled:=True;
+  btn5.Enabled:=True;
+
+end;
+
+procedure TForm6.btn6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

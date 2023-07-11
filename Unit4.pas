@@ -49,6 +49,7 @@ type
     procedure editclear;
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -258,6 +259,11 @@ begin
  cmb1.Enabled:=False;
  edt6.Enabled:=False;
  cmb2.Enabled:=False;
+end;
+
+procedure TForm4.btn6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

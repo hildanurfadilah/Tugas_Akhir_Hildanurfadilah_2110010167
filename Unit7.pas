@@ -54,6 +54,7 @@ type
     procedure editclear;
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -70,6 +71,7 @@ implementation
 {$R *.dfm}
 
 procedure TForm7.btn1Click(Sender: TObject);
+begin
   editclear;
   editenabled;
 
@@ -89,7 +91,6 @@ procedure TForm7.btn1Click(Sender: TObject);
   btn3.Enabled:=False;
   btn4.Enabled:=False;
   btn5.Enabled:=False;
-
 end;
 
 procedure TForm7.btn2Click(Sender: TObject);
@@ -167,6 +168,7 @@ begin
   btn5.Enabled:=True;
 
 end;
+
 procedure TForm7.btn4Click(Sender: TObject);
 begin
     if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning, [mbYes,mbNo],0)= mryes then
@@ -275,6 +277,11 @@ cmb1.Enabled:=False;
 edt7.Enabled:=False;
 edt8.Enabled:=False;
 cmb2.Enabled:=False;
+end;
+
+procedure TForm7.btn6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

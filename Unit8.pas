@@ -42,6 +42,7 @@ type
     procedure editclear;
     procedure editenabled;
     procedure FormCreate(Sender: TObject);
+    procedure btn6Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -130,7 +131,7 @@ procedure TForm8.btn3Click(Sender: TObject);
 begin
   ShowMessage('DATA BERHASIL DIUPDATE');
   zqry1.SQL.Clear;
-  zqry1.SQL.Add('Update user set username= "'+edt1.Text+'", password="'+edt2.Text+'", level= "'+cmb1.Text+'", status= "'+cmb2.Text+'", where user.id="'+id+'"');
+  zqry1.SQL.Add('Update user set username= "'+edt1.Text+'", password="'+edt2.Text+'", level= "'+cmb1.Text+'", status= "'+cmb2.Text+'", where id_user="'+id+'"');
   zqry1.ExecSQL;
 
   zqry1.SQL.Clear;
@@ -211,6 +212,11 @@ begin
   edt2.Enabled:=False;
   cmb1.Enabled:=False;
   cmb2.Enabled:=False;
+end;
+
+procedure TForm8.btn6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
 end;
 
 end.

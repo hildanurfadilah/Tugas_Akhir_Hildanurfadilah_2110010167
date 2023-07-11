@@ -139,6 +139,7 @@ object Form8: TForm8
     Height = 33
     Caption = 'Laporan'
     TabOrder = 8
+    OnClick = btn6Click
   end
   object cmb1: TComboBox
     Left = 312
@@ -239,7 +240,7 @@ object Form8: TForm8
           Font.Name = 'Arial'
           Font.Style = []
           Memo.UTF8 = (
-            'LAPORAN DATA KUSTOMER')
+            'LAPORAN DATA USER')
           ParentFont = False
         end
       end
@@ -261,7 +262,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'ID')
+            'ID USER')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -279,7 +280,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'NAMA')
+            'USERNAME')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -297,7 +298,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'TELEPON')
+            'PASSWORD')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -315,7 +316,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'ALAMAT')
+            'LEVEL')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -333,25 +334,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            'KOTA')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo7: TfrxMemoView
-          Left = 604.724800000000000000
-          Top = 7.559060000000000000
-          Width = 94.488250000000000000
-          Height = 18.897650000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'KODEPOS')
+            'STATUS')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -367,7 +350,7 @@ object Form8: TForm8
           Left = 166.299320000000000000
           Width = 60.472480000000000000
           Height = 22.677180000000000000
-          DataField = 'idkustomer'
+          DataField = 'id_user'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
@@ -379,7 +362,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."idkustomer"]')
+            '[frxDBDataset1."id_user"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -387,7 +370,7 @@ object Form8: TForm8
           Left = 226.771800000000000000
           Width = 94.488250000000000000
           Height = 22.677180000000000000
-          DataField = 'nmkustomer'
+          DataField = 'username'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
@@ -399,7 +382,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."nmkustomer"]')
+            '[frxDBDataset1."username"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -407,7 +390,7 @@ object Form8: TForm8
           Left = 321.260050000000000000
           Width = 94.488250000000000000
           Height = 22.677180000000000000
-          DataField = 'telp'
+          DataField = 'password'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
@@ -419,7 +402,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."telp"]')
+            '[frxDBDataset1."password"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -427,7 +410,7 @@ object Form8: TForm8
           Left = 415.748300000000000000
           Width = 94.488250000000000000
           Height = 22.677180000000000000
-          DataField = 'alamat'
+          DataField = 'level'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
@@ -439,14 +422,14 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."alamat"]')
+            '[frxDBDataset1."level"]')
           ParentFont = False
         end
         object Memo12: TfrxMemoView
           Left = 510.236550000000000000
           Width = 94.488250000000000000
           Height = 22.677180000000000000
-          DataField = 'kota'
+          DataField = 'status'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           DisplayFormat.DecimalSeparator = ','
@@ -458,27 +441,7 @@ object Form8: TForm8
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           HAlign = haCenter
           Memo.UTF8 = (
-            '[frxDBDataset1."kota"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo13: TfrxMemoView
-          Left = 604.724800000000000000
-          Width = 94.488250000000000000
-          Height = 22.677180000000000000
-          DataField = 'kodepos'
-          DataSet = frxDBDataset1
-          DataSetName = 'frxDBDataset1'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            '[frxDBDataset1."kodepos"]')
+            '[frxDBDataset1."status"]')
           ParentFont = False
           VAlign = vaCenter
         end
